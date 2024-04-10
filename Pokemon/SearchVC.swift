@@ -22,13 +22,30 @@ class SearchVC: UIViewController {
     title.font = UIFont(name: "Avenir", size: 40)
     title.textColor = .label
     
+    let searchBar = UITextField()
+    searchBar.placeholder = "Type the name of a Pokémon..."
+    searchBar.font = UIFont(name: "Avenir", size: 20)
+    searchBar.layer.cornerRadius = 10
+    searchBar.clipsToBounds = true
+    searchBar.backgroundColor = UIColor.systemGray6
+    searchBar.clearButtonMode = .whileEditing
+    searchBar.borderStyle = .none
+    
     view.addSubview(title)
+    view.addSubview(searchBar)
     
     title.translatesAutoresizingMaskIntoConstraints = false
+    searchBar.translatesAutoresizingMaskIntoConstraints = false
     
     NSLayoutConstraint.activate([
-      title.topAnchor.constraint(equalTo: view.topAnchor, constant: 300),
-      title.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+      title.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      title.bottomAnchor.constraint(equalTo: searchBar.topAnchor, constant: -60),
+      
+      searchBar.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      searchBar.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+      searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
+      searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
+      searchBar.heightAnchor.constraint(equalToConstant: 60)
     ])
   }
 
