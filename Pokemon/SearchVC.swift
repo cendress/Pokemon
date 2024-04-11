@@ -61,7 +61,7 @@ class SearchVC: UIViewController {
     searchBar.borderStyle = .none
     
     goButton = UIButton()
-    goButton.setTitle("GO!", for: .normal)
+    goButton.setTitle("GO", for: .normal)
     goButton.titleLabel?.font = UIFont(name: "Avenir", size: 25)
     goButton.setTitleColor(.white, for: .normal)
     goButton.backgroundColor = UIColor.green
