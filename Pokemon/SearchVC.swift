@@ -32,10 +32,10 @@ class SearchVC: UIViewController {
     searchBar.borderStyle = .none
     
     let goButton = UIButton()
-    goButton.setTitle("Go", for: .normal)
+    goButton.setTitle("GO", for: .normal)
     goButton.setTitleColor(.white, for: .normal)
     goButton.backgroundColor = UIColor.green
-    goButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+    goButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
     goButton.layer.cornerRadius = 10
     goButton.clipsToBounds = true
     goButton.layer.shadowColor = UIColor.black.cgColor
@@ -63,8 +63,8 @@ class SearchVC: UIViewController {
       
       goButton.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 60),
       goButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-      goButton.heightAnchor.constraint(equalToConstant: 100),
-      goButton.widthAnchor.constraint(equalToConstant: 200)
+      goButton.heightAnchor.constraint(equalToConstant: 50),
+      goButton.widthAnchor.constraint(equalToConstant: 150)
     ])
   }
 }
