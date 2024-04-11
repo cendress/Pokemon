@@ -46,12 +46,12 @@ class SearchVC: UIViewController {
   //MARK: - UI Setup
   
   private func setupViews() {
-    let title = UILabel()
-    title.text = "Pokémon Search"
-    title.font = UIFont(name: "Avenir", size: 40)
-    title.textColor = .label
+    titleLabel = UILabel()
+    titleLabel.text = "Pokémon Search"
+    titleLabel.font = UIFont(name: "Avenir", size: 40)
+    titleLabel.textColor = .label
     
-    let searchBar = UITextField()
+    searchBar = UITextField()
     searchBar.placeholder = "Type the name of a Pokémon..."
     searchBar.font = UIFont(name: "Avenir", size: 18)
     searchBar.layer.cornerRadius = 10
@@ -60,7 +60,7 @@ class SearchVC: UIViewController {
     searchBar.clearButtonMode = .whileEditing
     searchBar.borderStyle = .none
     
-    let goButton = UIButton()
+    goButton = UIButton()
     goButton.setTitle("GO!", for: .normal)
     goButton.titleLabel?.font = UIFont(name: "Avenir", size: 25)
     goButton.setTitleColor(.white, for: .normal)
@@ -72,17 +72,17 @@ class SearchVC: UIViewController {
     goButton.layer.shadowRadius = 6
     goButton.layer.shadowOpacity = 0.3
     
-    view.addSubview(title)
+    view.addSubview(titleLabel)
     view.addSubview(searchBar)
     view.addSubview(goButton)
     
-    title.translatesAutoresizingMaskIntoConstraints = false
+    titleLabel.translatesAutoresizingMaskIntoConstraints = false
     searchBar.translatesAutoresizingMaskIntoConstraints = false
     goButton.translatesAutoresizingMaskIntoConstraints = false
     
     NSLayoutConstraint.activate([
-      title.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-      title.bottomAnchor.constraint(equalTo: searchBar.topAnchor, constant: -60),
+      titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      titleLabel.bottomAnchor.constraint(equalTo: searchBar.topAnchor, constant: -60),
       
       searchBar.centerXAnchor.constraint(equalTo: view.centerXAnchor),
       searchBar.centerYAnchor.constraint(equalTo: view.centerYAnchor),
