@@ -24,7 +24,7 @@ class SearchVC: UIViewController {
     
     let searchBar = UITextField()
     searchBar.placeholder = "Type the name of a Pokémon..."
-    searchBar.font = UIFont(name: "Avenir", size: 20)
+    searchBar.font = UIFont(name: "Avenir", size: 18)
     searchBar.layer.cornerRadius = 10
     searchBar.clipsToBounds = true
     searchBar.backgroundColor = UIColor.systemGray6
@@ -59,7 +59,7 @@ class SearchVC: UIViewController {
       searchBar.centerYAnchor.constraint(equalTo: view.centerYAnchor),
       searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
       searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
-      searchBar.heightAnchor.constraint(equalToConstant: 60),
+      searchBar.heightAnchor.constraint(equalToConstant: 50),
       
       goButton.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 60),
       goButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
