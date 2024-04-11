@@ -14,6 +14,7 @@
 		9DDF7C582BC71D5D00C2116C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 9DDF7C572BC71D5D00C2116C /* Base */; };
 		9DDF7C602BC8664B00C2116C /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDF7C5F2BC8664B00C2116C /* Pokemon.swift */; };
 		9DDF7C622BC8710200C2116C /* PokemonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDF7C612BC8710200C2116C /* PokemonManager.swift */; };
+		9DDF7C642BC87A7000C2116C /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDF7C632BC87A7000C2116C /* DetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		9DDF7C592BC71D5D00C2116C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DDF7C5F2BC8664B00C2116C /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		9DDF7C612BC8710200C2116C /* PokemonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonManager.swift; sourceTree = "<group>"; };
+		9DDF7C632BC87A7000C2116C /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +62,10 @@
 			children = (
 				9DDF7C4B2BC71D5A00C2116C /* AppDelegate.swift */,
 				9DDF7C4D2BC71D5A00C2116C /* SceneDelegate.swift */,
-				9DDF7C4F2BC71D5A00C2116C /* SearchVC.swift */,
 				9DDF7C5F2BC8664B00C2116C /* Pokemon.swift */,
 				9DDF7C612BC8710200C2116C /* PokemonManager.swift */,
+				9DDF7C4F2BC71D5A00C2116C /* SearchVC.swift */,
+				9DDF7C632BC87A7000C2116C /* DetailVC.swift */,
 				9DDF7C542BC71D5D00C2116C /* Assets.xcassets */,
 				9DDF7C562BC71D5D00C2116C /* LaunchScreen.storyboard */,
 				9DDF7C592BC71D5D00C2116C /* Info.plist */,
@@ -145,6 +148,7 @@
 				9DDF7C622BC8710200C2116C /* PokemonManager.swift in Sources */,
 				9DDF7C4C2BC71D5A00C2116C /* AppDelegate.swift in Sources */,
 				9DDF7C4E2BC71D5A00C2116C /* SceneDelegate.swift in Sources */,
+				9DDF7C642BC87A7000C2116C /* DetailVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

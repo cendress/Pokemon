@@ -24,7 +24,8 @@ class SearchVC: UIViewController {
   //MARK: - @Objc method
   
   @objc private func goButtonPressed() {
-    
+    let detailVC = DetailVC()
+    self.navigationController?.pushViewController(detailVC, animated: true)
   }
   
   //MARK: - UI Setup
