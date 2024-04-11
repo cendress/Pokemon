@@ -8,13 +8,18 @@
 import UIKit
 
 class SearchVC: UIViewController {
-
+  var titleLabel: UILabel!
+  var searchBar: UITextField!
+  var goButton: UIButton!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = UIColor(named: "BackgroundColor")
     
     setupViews()
   }
+  
+  //MARK: - UI Setup
   
   private func setupViews() {
     let title = UILabel()
