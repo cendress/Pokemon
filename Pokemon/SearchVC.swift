@@ -24,8 +24,23 @@ class SearchVC: UIViewController {
   //MARK: - @Objc method
   
   @objc private func goButtonPressed() {
-    let detailVC = DetailVC()
-    self.navigationController?.pushViewController(detailVC, animated: true)
+    guard let searchText = searchBar.text, !searchText.isEmpty else {
+      return
+    }
+    
+    let pokemonManager = PokemonManager()
+    pokemonManager.fetchPokemon(name: searchText) { [weak self] pokemon in
+      DispatchQueue.main.async {
+        guard let pokemon = pokemon else {
+          print("Failed to fetch Pokemon")
+          return
+        }
+        
+        let detailVC = DetailVC()
+        detailVC.pokemonName = pokemon.name
+        self?.navigationController?.pushViewController(detailVC, animated: true)
+      }
+    }
   }
   
   //MARK: - UI Setup
