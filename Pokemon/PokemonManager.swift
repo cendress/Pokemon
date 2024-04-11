@@ -8,35 +8,36 @@
 import Foundation
 
 struct PokemonManager {
-  
-  private func fetchPokemon(name: String) {
+  func fetchPokemon(name: String, completion: @escaping (Pokemon?) -> Void) {
     let urlString = "https://pokeapi.co/api/v2/pokemon/\(name)/"
+    guard let url = URL(string: urlString) else {
+      print("Invalid URL")
+      completion(nil)
+      return
+    }
     
-    if let url = URL(string: urlString) {
-      let task = URLSession.shared.dataTask(with: url) { data, response, error in
-        if let error = error {
-          print("Error, \(error)")
-          return
-        }
-        
-        if let response = response as? HTTPURLResponse, response.statusCode == 200 {
-          if let data = data {
-            do {
-              let decoder = JSONDecoder()
-              decoder.keyDecodingStrategy = .convertFromSnakeCase
-              let pokemon = try decoder.decode(Pokemon.self, from: data)
-            } catch {
-              print("JSON failed to decode, \(error)")
-            }
-          }
-        } else {
-          print("Invalid response")
-        }
+    let task = URLSession.shared.dataTask(with: url) { data, response, error in
+      if let error = error {
+        print("Error: \(error)")
+        completion(nil)
+        return
       }
       
-      task.resume()
-    } else {
-      print("Invalid URL")
+      if let response = response as? HTTPURLResponse, response.statusCode == 200, let data = data {
+        do {
+          let decoder = JSONDecoder()
+          decoder.keyDecodingStrategy = .convertFromSnakeCase
+          let pokemon = try decoder.decode(Pokemon.self, from: data)
+          completion(pokemon)
+        } catch {
+          print("JSON failed to decode: \(error)")
+          completion(nil)
+        }
+      } else {
+        print("Invalid response")
+        completion(nil)
+      }
     }
+    task.resume()
   }
 }
