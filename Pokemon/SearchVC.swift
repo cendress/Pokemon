@@ -45,10 +45,10 @@ class SearchVC: UIViewController {
     searchBar.borderStyle = .none
     
     let goButton = UIButton()
-    goButton.setTitle("GO", for: .normal)
+    goButton.setTitle("GO!", for: .normal)
+    goButton.titleLabel?.font = UIFont(name: "Avenir", size: 25)
     goButton.setTitleColor(.white, for: .normal)
     goButton.backgroundColor = UIColor.green
-    goButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
     goButton.layer.cornerRadius = 10
     goButton.clipsToBounds = true
     goButton.layer.shadowColor = UIColor.black.cgColor
