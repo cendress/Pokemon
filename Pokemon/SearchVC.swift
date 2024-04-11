@@ -17,6 +17,14 @@ class SearchVC: UIViewController {
     view.backgroundColor = UIColor(named: "BackgroundColor")
     
     setupViews()
+    
+    goButton.addTarget(self, action: #selector(goButtonPressed), for: .touchUpInside)
+  }
+  
+  //MARK: - @Objc method
+  
+  @objc private func goButtonPressed() {
+    
   }
   
   //MARK: - UI Setup
