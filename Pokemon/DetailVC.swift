@@ -24,7 +24,7 @@ class DetailVC: UIViewController {
   }
   
   private func setupViews() {
-    let nameLabel = UILabel()
+    nameLabel = UILabel()
     nameLabel.font = UIFont(name: "Avenir", size: 24)
     nameLabel.textColor = .label
     nameLabel.textAlignment = .center
