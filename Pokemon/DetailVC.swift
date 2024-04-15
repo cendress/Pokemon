@@ -19,9 +19,16 @@ class DetailVC: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = UIColor(named: "BackgroundColor")
+    let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backButtonTapped))
+    navigationItem.leftBarButtonItem = backButton
+    navigationController?.navigationBar.tintColor = .black
     
     setupViews()
     updateUI()
+  }
+  
+  @objc private func backButtonTapped() {
+    navigationController?.popViewController(animated: true)
   }
   
   private func updateUI() {

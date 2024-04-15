@@ -32,7 +32,7 @@ class SearchVC: UIViewController {
     pokemonManager.fetchPokemon(name: searchText) { [weak self] pokemon in
       DispatchQueue.main.async {
         guard let pokemon = pokemon else {
-          print("Failed to fetch Pokemon")
+          self?.showAlert()
           return
         }
         
@@ -41,6 +41,14 @@ class SearchVC: UIViewController {
         self?.navigationController?.pushViewController(detailVC, animated: true)
       }
     }
+  }
+  
+  //MARK: - Alert
+  
+  private func showAlert() {
+    let ac = UIAlertController(title: "Incorrect Pokemon Name", message: "Please enter a Pokemon.", preferredStyle: .alert)
+    ac.addAction(UIAlertAction(title: "OK", style: .default))
+    present(ac, animated: true)
   }
   
   //MARK: - UI Setup
