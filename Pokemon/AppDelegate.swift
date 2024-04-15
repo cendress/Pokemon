@@ -15,7 +15,9 @@ var window: UIWindow?
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
     let window = UIWindow()
-    window.rootViewController = SearchVC()
+    let searchVC = SearchVC()
+    let navigationController = UINavigationController(rootViewController: searchVC)
+    window.rootViewController = navigationController
     window.makeKeyAndVisible()
     return true
   }

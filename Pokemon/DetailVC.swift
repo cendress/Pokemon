@@ -12,7 +12,7 @@ class DetailVC: UIViewController {
   
   var pokemonName: String? {
     didSet {
-      nameLabel.text = pokemonName
+      updateUI()
     }
   }
   
@@ -21,6 +21,13 @@ class DetailVC: UIViewController {
     view.backgroundColor = UIColor(named: "BackgroundColor")
     
     setupViews()
+    updateUI()
+  }
+  
+  private func updateUI() {
+    if isViewLoaded {
+      nameLabel.text = pokemonName
+    }
   }
   
   private func setupViews() {
@@ -38,5 +45,4 @@ class DetailVC: UIViewController {
       nameLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)
     ])
   }
-  
 }
