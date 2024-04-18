@@ -38,13 +38,13 @@ class DetailVC: UIViewController {
   
   private func updateUI() {
     if isViewLoaded {
-      nameLabel.text = pokemonName
+      nameLabel.text = pokemonName?.capitalized
       
       if let imageUrlString = pokemonImageUrl, let url = URL(string: imageUrlString) {
         loadImage(from: url)
       }
       
-      typeLabel.text = pokemonType
+      typeLabel.text = pokemonType?.capitalized
     }
   }
   
@@ -81,16 +81,16 @@ class DetailVC: UIViewController {
     typeLabel.translatesAutoresizingMaskIntoConstraints = false
     
     NSLayoutConstraint.activate([
-      nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-      nameLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-      
       imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-      imageView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 20),
+      imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
       imageView.widthAnchor.constraint(equalToConstant: 200),
       imageView.heightAnchor.constraint(equalToConstant: 200),
       
+      nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      nameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20),
+      
       typeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-      typeLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20)
+      typeLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 20)
     ])
   }
 }
