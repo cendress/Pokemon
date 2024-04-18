@@ -66,6 +66,7 @@ class DetailVC: UIViewController {
     
     imageView = UIImageView()
     imageView.contentMode = .scaleAspectFit
+    imageView.backgroundColor = imageView == nil ? .lightGray : nil
     
     typeLabel = UILabel()
     typeLabel.font = UIFont(name: "Avenir", size: 20)
@@ -82,7 +83,7 @@ class DetailVC: UIViewController {
     
     NSLayoutConstraint.activate([
       imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-      imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
+      imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 200),
       imageView.widthAnchor.constraint(equalToConstant: 200),
       imageView.heightAnchor.constraint(equalToConstant: 200),
       
