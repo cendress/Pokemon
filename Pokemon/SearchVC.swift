@@ -31,7 +31,7 @@ class SearchVC: UIViewController {
     let pokemonManager = PokemonManager()
     pokemonManager.fetchPokemon(name: searchText) { [weak self] pokemon in
       DispatchQueue.main.async {
-        guard let pokemon = pokemon else {
+        guard let self = self, let pokemon = pokemon else {
           self?.showAlert()
           return
         }
@@ -40,7 +40,7 @@ class SearchVC: UIViewController {
         detailVC.pokemonName = pokemon.name
         detailVC.pokemonImageUrl = pokemon.sprites.frontDefault
         detailVC.pokemonType = pokemon.types.first?.type.name
-        self?.navigationController?.pushViewController(detailVC, animated: true)
+        self.navigationController?.pushViewController(detailVC, animated: true)
       }
     }
   }

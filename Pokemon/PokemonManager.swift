@@ -48,5 +48,4 @@ struct PokemonManager {
     }
     task.resume()
   }
-  
 }

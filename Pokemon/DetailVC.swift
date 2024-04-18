@@ -42,9 +42,11 @@ class DetailVC: UIViewController {
       
       if let imageUrlString = pokemonImageUrl, let url = URL(string: imageUrlString) {
         loadImage(from: url)
+      } else {
+        imageView.image = UIImage(named: "PokemonImage")
       }
       
-      typeLabel.text = pokemonType?.capitalized
+      typeLabel.text = "Pokemon Type: \(pokemonType?.capitalized ?? "Unknown")"
     }
   }
   
@@ -66,7 +68,6 @@ class DetailVC: UIViewController {
     
     imageView = UIImageView()
     imageView.contentMode = .scaleAspectFit
-    imageView.backgroundColor = imageView == nil ? .lightGray : nil
     
     typeLabel = UILabel()
     typeLabel.font = UIFont(name: "Avenir", size: 20)
