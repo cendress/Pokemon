@@ -38,6 +38,8 @@ class SearchVC: UIViewController {
         
         let detailVC = DetailVC()
         detailVC.pokemonName = pokemon.name
+        detailVC.pokemonImageUrl = pokemon.sprites.frontDefault
+        detailVC.pokemonType = pokemon.types.first?.type.name
         self?.navigationController?.pushViewController(detailVC, animated: true)
       }
     }
