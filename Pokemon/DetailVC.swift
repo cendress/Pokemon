@@ -64,13 +64,33 @@ class DetailVC: UIViewController {
     nameLabel.textColor = .label
     nameLabel.textAlignment = .center
     
+    imageView = UIImageView()
+    imageView.contentMode = .scaleAspectFit
+    
+    typeLabel = UILabel()
+    typeLabel.font = UIFont(name: "Avenir", size: 20)
+    typeLabel.textColor = .darkGray
+    typeLabel.textAlignment = .center
+    
     view.addSubview(nameLabel)
+    view.addSubview(imageView)
+    view.addSubview(typeLabel)
     
     nameLabel.translatesAutoresizingMaskIntoConstraints = false
+    imageView.translatesAutoresizingMaskIntoConstraints = false
+    typeLabel.translatesAutoresizingMaskIntoConstraints = false
     
     NSLayoutConstraint.activate([
       nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-      nameLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+      nameLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+      
+      imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      imageView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 20),
+      imageView.widthAnchor.constraint(equalToConstant: 200),
+      imageView.heightAnchor.constraint(equalToConstant: 200),
+      
+      typeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      typeLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20)
     ])
   }
 }
