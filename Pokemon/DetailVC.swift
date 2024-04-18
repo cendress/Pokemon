@@ -12,6 +12,9 @@ class DetailVC: UIViewController {
   var imageView: UIImageView!
   var typeLabel: UILabel!
   
+  var pokemonImageUrl: String?
+  var pokemonType: String?
+  
   var pokemonName: String? {
     didSet {
       updateUI()
@@ -36,6 +39,12 @@ class DetailVC: UIViewController {
   private func updateUI() {
     if isViewLoaded {
       nameLabel.text = pokemonName
+      
+      if let imageUrlString = pokemonImageUrl, let url = URL(string: imageUrlString) {
+        loadImage(from: url)
+      }
+      
+      typeLabel.text = pokemonType
     }
   }
   
